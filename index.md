@@ -4,7 +4,7 @@
 スマホは非対応
 操作方法は W/A/S/D
 
-[Alpha 1.0](/)
+[Alpha 1.0](/GYOKUSHA-test-Web-GL/)
 
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
