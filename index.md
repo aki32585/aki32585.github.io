@@ -4,8 +4,6 @@
 スマホは非対応
 操作方法は W/A/S/D
 
-[Link](url) and ![Image](src)
-```
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
