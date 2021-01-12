@@ -12,20 +12,35 @@
 
 <p>トラッキングするやつ</p> 
   
-<!--追跡入力欄を表示するコンテナです。-->
+<!--追跡番号入力欄。-->
+<input type="text" id="YQNum" maxlength="50"/>
+<!--このボタンはスクリプトメソッド呼び出しに使われます。-->
+<input type="button" value="TRACK" onclick="doTrack()"/>
+<!--追跡結果表示用のコンテナです。-->
 <div id="YQContainer"></div>
 
 <!--スクリプトコードはページ最下部に挿入できますが、ページが読み込み終わってから実行してください。-->
 <script type="text/javascript" src="//www.17track.net/externalcall.js"></script>
 <script type="text/javascript">
-YQV5.trackMulti({
-    //必須です。コンテンツホストのコンテナIDを指定してください。
-    YQ_ContainerId:"YQContainer",
-    //任意です。追跡結果の高さを指定してください。最大高さは 800px で、デフォルトは 560px です。
-    YQ_Height:800,
-    //任意です。UI言語を指定してください。デフォルト言語はブラウザの設定に基づき自動的に設定されます。
-    YQ_Lang:"en"
-});
+function doTrack() {
+    var num = document.getElementById("YQNum").value;
+    if(num===""){
+        alert("Enter your number."); 
+        return;
+    }
+    YQV5.trackSingle({
+        //必須です。コンテンツホストのコンテナIDを指定してください。
+        YQ_ContainerId:"YQContainer",
+        //任意です。追跡結果の高さを指定してください。最大高さは 800px で、デフォルトは 560px です。
+        YQ_Height:700,
+        //任意です。配送業者を選択します。デフォルトは自動認識です。
+        YQ_Fc:"0",
+        //任意です。UI言語を指定してください。デフォルト言語はブラウザの設定に基づき自動的に設定されます。
+        YQ_Lang:"en",
+        //必須です。追跡番号を指定してください。
+        YQ_Num:num
+    });
+}
 </script>
 
 </body> 
